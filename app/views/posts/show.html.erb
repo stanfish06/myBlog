@@ -1,0 +1,10 @@
+<% cache @post do %>
+  <h1><%= @post.title %></h1>
+  <%= @post.body %>
+<% end %>
+
+<%= link_to "Back", posts_path %>
+<% if authenticated? %>
+  <%= link_to "Edit", edit_post_path(@post) %>
+  <%= button_to "Delete", @post, method: :delete, data: { turbo_confirm: "confirm again" } %>
+<% end %>

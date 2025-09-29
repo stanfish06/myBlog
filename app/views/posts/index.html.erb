@@ -1,0 +1,52 @@
+<div class="profile">
+  <%= image_tag "fish.jpg", alt: "avatar", class: "avatar" %>
+  <span class="hello">Hello <span class="wave">👋</span></span>
+</div>
+
+<div class="about-me">
+  <h2>About Me</h2>
+  <p style="margin-top:0.6rem;margin-bottom:0.6rem;">
+    I am <span class="hl" style="font-weight:600;">Stan</span>, a bioinformatics PhD student at the University of Michigan.
+    My research combines computational and experimental approaches to study embryonic development.
+  </p>
+  <ul style="margin:0 0 0 0.8rem 0 0 1rem;padding:0;">
+    <li><strong>Research focus:</strong>
+      <ul style="margin:.25rem 0 0 1rem;padding:0;">
+        <li>single-cell topological analysis</li>
+        <li>stem cell signaling</li>
+        <li>stem cell epigenetics</li>
+      </ul>
+    </li>
+    <li style="margin-top:0.5rem"><strong>I code in:</strong>
+      <ul style="margin:.25rem 0 0 1rem;padding:0;">
+        <li>python</li>
+        <li>R</li>
+        <li>julia</li>
+      </ul>
+    </li>
+    <li style="margin-top:0.5rem;"><strong>I like:</strong>
+      <ul style="margin:.25rem 0 0 1rem;padding:0;">
+        <li>vim</li>
+        <li>linux</li>
+        <li>terminal</li>
+      </ul>
+    </li>
+  </ul>
+  <hr>
+</div>
+
+<div class="blog">
+  <h2>Blogs</h2>
+  <hr>
+</div>
+
+<%= link_to "Login", new_session_path unless authenticated? %>
+<%= link_to "New post", new_post_path if authenticated? %>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <div>
+      <%= link_to post.title, post %>
+    </div
+  <% end %>
+</div>
