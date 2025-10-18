@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module MyBlog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 8.0
+    config.load_defaults 7.2
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
@@ -23,6 +23,5 @@ module MyBlog
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.active_support.key_generator_hash_digest_class = OpenSSL::Digest::SHA256
   end
 end
